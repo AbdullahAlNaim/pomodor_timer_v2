@@ -1,0 +1,90 @@
+body {
+    background-color: rgb(195, 93, 93);
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    margin: auto;
+    flex-direction: column;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 2px rgb(177, 88, 88);
+    flex-wrap: wrap;
+    margin-bottom: 10%;
+    padding: 20px 0px;
+}
+
+.right-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.right-nav button {
+    background-color: rgb(204, 110, 110);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    padding: 7px;
+}
+
+.right-nav-but {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upper-sec {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.upper-sec button {
+    background-color: rgb(156, 77, 77);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.lower-sec {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+
+.timing {
+    background-color: rgb(204, 110, 110);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.time {
+    font-size: 120px;
+    padding: 20px;
+}
+
+.upper-sec button {
+    padding: 6px 15px;
+    border-radius: 4px;
+    border: transparent
+}
+
+.start-stop button {
+    padding: 20px 60px;
+    border-bottom: solid 5px rgb(214, 214, 214);
+    color: rgb(204, 110, 110);
+}
+
+button {
+    border-radius: 5px;
+    border: transparent;
+    font-family: 'Nunito', sans-serif;
+}
