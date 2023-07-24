@@ -15,14 +15,40 @@ const hours = Math.floor((mili / 1000 / 60 / 60) % 24);
 
 let active = true;
 
-let test = Date.now();
+let countDownDate = new Date().getTime() + (((1000 * 60) * 25) + 1000)
+//let countDownDate = new Date().getTime() + 5000;
 function begin() {
     let x = setInterval(function () {
+
         let now = new Date().getTime();
-        let sec = Math.floor(((now - test) / 1000) % 60);
-        let min = Math.floor(((now - test) / 1000 / 60) % 60)
-        console.log(min, sec);
-        time.innerHTML = `${min}:${sec}`
+        let distance = countDownDate - now;
+
+        let min = Math.floor((distance / 1000 / 60) % 60)
+
+        let sec = Math.floor((distance / 1000) % 60)
+        let tempSec = sec.toString();
+        let tempMin = min.toString();
+
+        if ((tempSec.length = 2) && (tempMin.length < 2)) {
+            time.innerHTML = `0${min}:${sec}`;
+        } else if ((tempSec.length < 2) && (tempMin.length < 2)) {
+            time.innerHTML = `0${min}:0${sec}`;
+        } else if ((tempSec.length < 2) && (tempMin.length = 2)) {
+            time.innerHTML = `${min}:0${sec}`;
+        } else if ((tempSec.length = 2) && (tempMin.length = 2)) {
+            time.innerHTML = `${min}:${sec}`;
+        } else if ((tempSec.length = 1) && (tempMin.length = 2)
+            && (sec === 0) && (min === 0)) {
+            time.innerHTML = `${25}:${'00'}`;
+        }
+
+
+        if ((min === 0) && (sec === 0)) {
+            clearInterval(x)
+            //countDownDate = new Date().getTime() + (((1000 * 60) * 25) + 1000)
+            time.innerHTML = `25:00`
+        }
+
     }, 1000)
 }
 
@@ -34,7 +60,7 @@ start.addEventListener('click', () => {
     } else {
         press.innerHTML = 'START'
 
-        clearInterval(begin());
+        clearInterval(begin);
     }
 });
 
